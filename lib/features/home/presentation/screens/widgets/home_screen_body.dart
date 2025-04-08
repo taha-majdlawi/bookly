@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
 import 'package:bookly_app/features/home/presentation/screens/widgets/custom_app_bar.dart';
+import 'package:bookly_app/features/home/presentation/screens/widgets/custom_best%20seller%20list%20view_item.dart';
 import 'package:bookly_app/features/home/presentation/screens/widgets/custom_list_view_item.dart';
 import 'package:bookly_app/features/home/presentation/screens/widgets/featured_book_list_view.dart';
 import 'package:flutter/material.dart';
@@ -25,44 +26,6 @@ class HomeScreenBody extends StatelessWidget {
           BestSellerListViewItem(),
         ],
       ),
-    );
-  }
-}
-
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.13,
-          width: MediaQuery.of(context).size.width * 0.2,
-          child: AspectRatio(
-            aspectRatio: 2.5 / 4,
-            child: Container(
-              decoration: const BoxDecoration(
-                image: DecorationImage(image: AssetImage(AssetsData.testImage)),
-              ),
-            ),
-          ),
-        ),
-        SizedBox(width: 30),
-        Column(
-          children: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.5,
-              child: Text(
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                'Harry Porter and the Goblet of Fire',
-                style: Styles.textStyle16,
-              ),
-            ),
-          ],
-        ),
-      ],
     );
   }
 }
