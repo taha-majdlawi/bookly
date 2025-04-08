@@ -8,7 +8,7 @@ class CustomListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: MediaQuery.of(context).size.height * 0.3,
-      width: MediaQuery.of(context).size.width * 0.5,
+      width: MediaQuery.of(context).size.width * 0.4,
       child: AspectRatio(
         aspectRatio: 2.7 / 4,
         child: Container(
