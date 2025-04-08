@@ -21,6 +21,7 @@ class HomeScreenBody extends StatelessWidget {
           FeaturedBookdListView(),
           SizedBox(height: 50),
           Text('Best Seller', style: Styles.textStyle18),
+          SizedBox(height: 20),
           BestSellerListViewItem(),
         ],
       ),
@@ -47,7 +48,20 @@ class BestSellerListViewItem extends StatelessWidget {
             ),
           ),
         ),
-        Column(children: [Text('test', style: Styles.textStyle18)]),
+        SizedBox(width: 30),
+        Column(
+          children: [
+            SizedBox(
+              width: MediaQuery.of(context).size.width * 0.5,
+              child: Text(
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                'Harry Porter and the Goblet of Fire',
+                style: Styles.textStyle16,
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }
