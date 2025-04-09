@@ -1,9 +1,10 @@
 import 'package:bookly_app/core/utils/styles.dart';
-import 'package:bookly_app/core/widgets/custom_button.dart';
+
 import 'package:bookly_app/features/home/presentation/screens/widgets/book_action.dart';
 import 'package:bookly_app/features/home/presentation/screens/widgets/book_rating.dart';
 import 'package:bookly_app/features/home/presentation/screens/widgets/custom_book_details_app_bar.dart';
 import 'package:bookly_app/features/home/presentation/screens/widgets/custom_book_item.dart';
+import 'package:bookly_app/features/home/presentation/screens/widgets/similer_books_list_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -36,6 +37,16 @@ class BookDetailsScreenBody extends StatelessWidget {
           ),
           const SizedBox(height: 37),
           const BooksAction(),
+          const SizedBox(height: 50),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(
+              'You can also like',
+              style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
+            ),
+          ),
+          const SizedBox(height: 16),
+          const SimilerBooksListView(),
         ],
       ),
     );
