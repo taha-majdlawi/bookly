@@ -7,14 +7,14 @@ import 'package:bookly_app/features/home/presentation/screens/widgets/book_ratin
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerListViewItem extends StatelessWidget {
-  const BestSellerListViewItem({super.key});
+class BookListViewItem extends StatelessWidget {
+  const BookListViewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap : () {
-       GoRouter.of(context).push(AppRouter.kDetailsView); 
+      onTap: () {
+        GoRouter.of(context).push(AppRouter.kDetailsView);
       },
 
       child: Row(
@@ -26,7 +26,9 @@ class BestSellerListViewItem extends StatelessWidget {
               aspectRatio: 2.5 / 4,
               child: Container(
                 decoration: const BoxDecoration(
-                  image: DecorationImage(image: AssetImage(AssetsData.testImage)),
+                  image: DecorationImage(
+                    image: AssetImage(AssetsData.testImage),
+                  ),
                 ),
               ),
             ),
@@ -51,15 +53,18 @@ class BestSellerListViewItem extends StatelessWidget {
                   style: Styles.textStyle14.copyWith(color: Colors.grey),
                 ),
                 const SizedBox(height: 3),
-      
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
                       '19.99 \$',
-                      style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                
+
                     BookRating(count: 245, rating: 4.8),
                   ],
                 ),
