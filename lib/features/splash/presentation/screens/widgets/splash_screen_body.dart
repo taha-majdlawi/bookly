@@ -1,4 +1,3 @@
-
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/features/splash/presentation/screens/widgets/sliding_text.dart';
@@ -6,7 +5,6 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-
 
 class SplashScreenBody extends StatefulWidget {
   const SplashScreenBody({Key? key}) : super(key: key);
@@ -68,10 +66,10 @@ class _SplashViewbodyState extends State<SplashScreenBody>
       //   () => const HomeScreen(),
       //   // calculations
       //   transition: Transition.fade,
-    //      duration: kTranstionDuration
-     // );
+      //      duration: kTranstionDuration
+      // );
 
-        GoRouter.of(context).push(AppRouter.kHomeView);
+      GoRouter.of(context).push(AppRouter.kHomeView);
     });
   }
 }

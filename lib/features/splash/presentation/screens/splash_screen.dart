@@ -8,7 +8,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color(0xff100B20),
-      body:  SplashScreenBody(),
+      body: SplashScreenBody(),
     );
   }
 }
