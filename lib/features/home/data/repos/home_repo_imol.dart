@@ -31,8 +31,23 @@ class HomeRepoImol implements HomeRepo {
   }
 
   @override
-  Future<Either<Failures, List<BookModle>>> fetchFeaturedBooks() {
-    // TODO: implement fetchFeaturedBooks
-    throw UnimplementedError();
+  Future<Either<Failures, List<BookModle>>> fetchFeaturedBooks()async {
+     try {
+      var data = await apiService.get(
+        endPoint:
+            'volumes?q=subject:programming&Filtring=free-ebooks',
+      );
+
+      List<BookModle> books = [];
+      for (var item in data['items']) {
+        books.add(BookModle.fromJson(item));
+      }
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(ServerFailure.fromDioError(e));
+      }
+      return left(ServerFailure(errMsg: e.toString()));
+    }
   }
 }
