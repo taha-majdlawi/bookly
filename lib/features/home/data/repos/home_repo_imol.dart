@@ -31,11 +31,10 @@ class HomeRepoImol implements HomeRepo {
   }
 
   @override
-  Future<Either<Failures, List<BookModle>>> fetchFeaturedBooks()async {
-     try {
+  Future<Either<Failures, List<BookModle>>> fetchFeaturedBooks() async {
+    try {
       var data = await apiService.get(
-        endPoint:
-            'volumes?q=subject:programming&Filtring=free-ebooks',
+        endPoint: 'volumes?q=subject:programming&Filtring=free-ebooks',
       );
 
       List<BookModle> books = [];
