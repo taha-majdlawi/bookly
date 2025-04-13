@@ -1,3 +1,4 @@
+import 'package:bookly_app/core/widgets/circular_progress_indicator.dart';
 import 'package:bookly_app/core/widgets/custom_error_widget.dart';
 import 'package:bookly_app/features/home/presentation/manager/featuerd_books_cubit/featuerd_books_cubit.dart';
 import 'package:bookly_app/features/home/presentation/screens/widgets/custom_book_item.dart';
@@ -26,7 +27,7 @@ class FeaturedBookdListView extends StatelessWidget {
         } else if (state is FeatuerdBooksFailure) {
           return CustomErrorWidget(errMessage: state.errMsg);
         } else {
-          return Center(child: const CircularProgressIndicator());
+          return Center(child: const CustomCircularProgressIndicator());
         }
       },
     );
