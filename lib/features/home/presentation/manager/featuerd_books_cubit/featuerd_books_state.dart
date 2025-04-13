@@ -7,14 +7,14 @@ final class FeatuerdBooksInitial extends FeatuerdBooksState {}
 
 final class FeatuerdBooksLoading extends FeatuerdBooksState {}
 
- class FeatuerdBooksSuccess extends FeatuerdBooksState {
+class FeatuerdBooksSuccess extends FeatuerdBooksState {
   final List<BookModle> books;
 
   FeatuerdBooksSuccess(this.books);
 }
 
-final class FeatuerdBookFailure extends FeatuerdBooksState {
+final class FeatuerdBooksFailure extends FeatuerdBooksState {
   final String errMsg;
 
-  FeatuerdBookFailure(this.errMsg);
+  FeatuerdBooksFailure(this.errMsg);
 }
