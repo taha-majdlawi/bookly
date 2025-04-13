@@ -18,16 +18,6 @@ class CustomBookItem extends StatelessWidget {
               (context, url) => Center(child: CircularProgressIndicator()),
           errorWidget: (context, url, error) => Icon(Icons.error, size: 35),
         ),
-
-        // child: Container(
-        //   decoration: BoxDecoration(
-        //     borderRadius: BorderRadius.circular(16),
-        //     image: DecorationImage(
-        //       image: NetworkImage(imageUrl),
-        //       fit: BoxFit.fill,
-        //     ),
-        //   ),
-        // ),
       ),
     );
   }
