@@ -3,13 +3,15 @@ import 'dart:ui';
 import 'package:bookly_app/core/utils/app_router.dart';
 import 'package:bookly_app/core/utils/assets.dart';
 import 'package:bookly_app/core/utils/styles.dart';
+import 'package:bookly_app/features/home/data/models/book_modle/book_modle.dart';
 import 'package:bookly_app/features/home/presentation/screens/widgets/book_rating.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 class BookListViewItem extends StatelessWidget {
-  const BookListViewItem({super.key});
-
+  const BookListViewItem({super.key, required this.book});
+  final BookModle book;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -24,12 +26,14 @@ class BookListViewItem extends StatelessWidget {
             width: MediaQuery.of(context).size.width * 0.2,
             child: AspectRatio(
               aspectRatio: 2.5 / 4,
-              child: Container(
-                decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(AssetsData.testImage),
-                  ),
-                ),
+              child: CachedNetworkImage(
+                imageUrl: book.volumeInfo!.imageLinks?.thumbnail ?? '',
+                fit: BoxFit.fill,
+                placeholder:
+                    (context, url) =>
+                        Center(child: CircularProgressIndicator()),
+                errorWidget:
+                    (context, url, error) => Icon(Icons.error, size: 35),
               ),
             ),
           ),
@@ -43,13 +47,15 @@ class BookListViewItem extends StatelessWidget {
                   child: Text(
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    'Harry Porter and the Goblet of Fire',
+                    book.volumeInfo!.title.toString(),
                     style: Styles.textStyle16,
                   ),
                 ),
                 const SizedBox(height: 3),
                 Text(
-                  'K. Rowling',
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  book.volumeInfo!.authors![0],
                   style: Styles.textStyle14.copyWith(color: Colors.grey),
                 ),
                 const SizedBox(height: 3),
