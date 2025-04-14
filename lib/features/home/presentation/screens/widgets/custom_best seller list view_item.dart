@@ -55,7 +55,8 @@ class BookListViewItem extends StatelessWidget {
                 Text(
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  book.volumeInfo!.authors![0],
+
+                 ii(book) ?? 'Unknown',
                   style: Styles.textStyle14.copyWith(color: Colors.grey),
                 ),
                 const SizedBox(height: 3),
@@ -80,5 +81,20 @@ class BookListViewItem extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  ii(BookModle book) {
+    try {
+      if (book.volumeInfo == null) {
+        return null;
+      } else if (book.volumeInfo!.authors == null) {
+        return null;
+      }
+      else{
+        return book.volumeInfo!.authors![0];
+      }
+    } on Exception catch (e) {
+      return null;
+    }
   }
 }
