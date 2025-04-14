@@ -64,7 +64,7 @@ class BookListViewItem extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      '19.99 \$',
+                      'Free',
                       style: TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
