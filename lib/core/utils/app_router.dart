@@ -1,3 +1,4 @@
+import 'package:bookly_app/features/home/data/models/book_modle/book_modle.dart';
 import 'package:bookly_app/features/home/presentation/screens/book_details_screen.dart';
 import 'package:bookly_app/features/home/presentation/screens/home_screen.dart';
 import 'package:bookly_app/features/search/presentation/screens/search_screen.dart';
@@ -26,7 +27,7 @@ abstract class AppRouter {
       GoRoute(
         path: kDetailsView,
         builder: (BuildContext context, GoRouterState state) {
-          return const BookDetailsScreen();
+          return  BookDetailsScreen(book: state.extra as BookModle);
         },
       ),
       GoRoute(
