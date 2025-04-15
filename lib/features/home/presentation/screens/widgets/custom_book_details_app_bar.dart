@@ -12,7 +12,7 @@ class CustomBookDetailsAppBar extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            GoRouter.of(context).pop();
           },
           icon: Icon(Icons.close),
         ),
