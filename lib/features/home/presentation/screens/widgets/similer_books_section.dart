@@ -10,12 +10,16 @@ class SimilerBooksSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'You can also like',
-          style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 30.0),
+          child: Text(
+            'You can also like',
+            style: Styles.textStyle16.copyWith(fontWeight: FontWeight.w600),
+          ),
         ),
         const SizedBox(height: 16),
         const SimilerBooksListView(),
+        const SizedBox(height: 40),
       ],
     );
   }

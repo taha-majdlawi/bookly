@@ -15,16 +15,22 @@ class BookDetailsScreenBody extends StatelessWidget {
       slivers: [
         SliverFillRemaining(
           hasScrollBody: false,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30.0),
-            child: Column(
-              children: [
-                CustomBookDetailsAppBar(),
-                BookDetailsSection(book : book),
-                const Expanded(child: SizedBox(height: 50)),
-                const SimilerBooksSection(),
-              ],
-            ),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                child: CustomBookDetailsAppBar(),
+              ),
+              Padding(
+                 padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                child: BookDetailsSection(book : book),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30.0),
+                child: const Expanded(child: SizedBox(height: 50)),
+              ),
+              const SimilerBooksSection(),
+            ],
           ),
         ),
       ],
