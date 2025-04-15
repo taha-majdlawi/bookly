@@ -17,16 +17,18 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: width * 0.17),
           child: CustomBookItem(
             imageUrl: book.volumeInfo!.imageLinks!.thumbnail ?? '',
-             
           ),
         ),
         const SizedBox(height: 43),
         Text(
-          'The Jungle Book',
+          book.volumeInfo!.title!,
+          maxLines: 2,
+          textAlign: TextAlign.center,
+          overflow: TextOverflow.ellipsis,
           style: Styles.textStyle20.copyWith(fontSize: 25),
         ),
         const SizedBox(height: 6),
-        Text('Rudyard Kipling', style: Styles.textStyle18),
+        Text(book.volumeInfo!.authors![0], style: Styles.textStyle18),
         const BookRating(
           count: 2390,
           rating: 4.8,
