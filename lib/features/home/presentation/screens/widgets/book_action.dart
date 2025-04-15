@@ -1,9 +1,10 @@
 import 'package:bookly_app/core/widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class BooksAction extends StatelessWidget {
-  const BooksAction({super.key});
-
+  const BooksAction({super.key, required this.url});
+  final String url;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -12,6 +13,7 @@ class BooksAction extends StatelessWidget {
         children: [
           Expanded(
             child: CustomButton(
+              onPressed: () {},
               fontSize: 18,
               text: 'Free',
               backgroundColor: Colors.white,
@@ -24,6 +26,9 @@ class BooksAction extends StatelessWidget {
           ),
           Expanded(
             child: CustomButton(
+              onPressed: () {
+                launchUrl(Uri.parse(url));
+              },
               fontSize: 14,
               text: 'Free preview',
               backgroundColor: Color(0xffEF8262),
