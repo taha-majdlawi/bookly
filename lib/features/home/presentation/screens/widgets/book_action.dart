@@ -26,8 +26,16 @@ class BooksAction extends StatelessWidget {
           ),
           Expanded(
             child: CustomButton(
-              onPressed: () {
-                launchUrl(Uri.parse(url));
+              onPressed: () async {
+                try {
+                  final uri = Uri.parse(url);
+                  bool launched = await launchUrl(uri);
+                  if (!launched) {
+                    print('Could not launch URL');
+                  }
+                } catch (e) {
+                  print('Error launching URL: $e');
+                }
               },
               fontSize: 14,
               text: 'Free preview',
