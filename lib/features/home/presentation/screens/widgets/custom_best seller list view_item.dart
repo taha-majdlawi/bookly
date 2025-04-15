@@ -56,7 +56,7 @@ class BookListViewItem extends StatelessWidget {
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
 
-                 getFirstAuthorName(book) ?? 'Unknown',
+                  getFirstAuthorName(book) ?? 'Unknown',
                   style: Styles.textStyle14.copyWith(color: Colors.grey),
                 ),
                 const SizedBox(height: 3),
@@ -89,8 +89,7 @@ class BookListViewItem extends StatelessWidget {
         return null;
       } else if (book.volumeInfo!.authors == null) {
         return null;
-      }
-      else{
+      } else {
         return book.volumeInfo!.authors![0];
       }
     } on Exception catch (e) {

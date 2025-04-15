@@ -28,7 +28,7 @@ class BookDetailsSection extends StatelessWidget {
           style: Styles.textStyle20.copyWith(fontSize: 25),
         ),
         const SizedBox(height: 6),
-        Text(book.volumeInfo!.authors![0], style: Styles.textStyle18),
+        Text(getFirstAuthorName(book) ?? 'Unknown', style: Styles.textStyle18),
         const BookRating(
           count: 2390,
           rating: 4.8,
@@ -38,5 +38,19 @@ class BookDetailsSection extends StatelessWidget {
         const BooksAction(),
       ],
     );
+  }
+
+  getFirstAuthorName(BookModle book) {
+    try {
+      if (book.volumeInfo == null) {
+        return null;
+      } else if (book.volumeInfo!.authors == null) {
+        return null;
+      } else {
+        return book.volumeInfo!.authors![0];
+      }
+    } on Exception catch (e) {
+      return null;
+    }
   }
 }
